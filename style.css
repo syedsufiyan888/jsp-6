@@ -1,10 +1,65 @@
 body{
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 .app{
-    text-align: center;
+    
+    /* border: 2px solid black; */
+    width: 50%;
+    height: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.textbtn{
+    display: flex;
+    justify-content: space-between;
+    
+}
+#textinput{
+    width: 70%;
+    padding: 0.5rem;
+    border: 2px solid green;
+}
+#addTaskbtn{
+    width: 25%;
+    padding: 0.5rem;
+    background-color: rgb(122, 229, 122);
+    border: 2px solid green;
+    font-size: 1rem;
+    
+    
+}
+#addTaskbtn:hover{
+    background-color: rgb(88, 166, 88);
+    cursor: pointer;
 }
 #todo{
     font-size: 4rem;
+    text-align: center;
+}
+ul{
+    list-style: decimal;
+    /* margin: 0; */
+    padding: 0;
+
+    
+    
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+    
+}
+.deleteBtn{
+    background-color: rgb(228, 107, 107);
+    border-radius: 5rem;
+    font-weight: 900;
+    
+}
+.deleteBtn:hover{
+    background-color: rgb(193, 95, 95);
+    cursor: pointer;
 }
