@@ -4,10 +4,34 @@ const tasklist = document.getElementById('tasklist');
 
 
 
-addTaskbtn.addEventListener('click', addTask());
+addTaskbtn.addEventListener('click', addTask);
 
 function addTask(){
-    const tasktext = textinput.value;
-    console.log('hello',tasktext);
+    const taskText = textinput.value.trim();
+    if(taskText==''){
+        return;
+    }
+
+
+    const taskItem = document.createElement('li');
+    taskItem.className = 'task';
+
+    taskItem.innerHTML = `<span>${taskText}</span><button class="deleteBtn">X</button>`
+
+    tasklist.appendChild(taskItem);
+    textinput.value = '';
+
+    const deleteBtn = taskItem.querySelector('.deleteBtn')
+    deleteBtn.addEventListener('click',deleteTask)
+
+    // tasklist.appendchile(taskItem);
+    // taskinput.value='';
+
+    // const tasktext = textinput.value;
+    // console.log('hello',tasktext);
 }
-addTask()
+function deleteTask(event){
+    event.stopPropagation();
+    const taskItem = this.parentElement;
+    tasklist.removeChild(taskItem);
+}
