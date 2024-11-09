@@ -22,7 +22,7 @@ function addTask(){
     textinput.value = '';
 
     const deleteBtn = taskItem.querySelector('.deleteBtn')
-    deleteBtn.addEventListener('click',deleteTask)
+  const deleteBtn = taskItem.querySelector('.deleteBtn')  deleteBtn.addEventListener('click',deleteTask)
 
     // tasklist.appendchile(taskItem);
     // taskinput.value='';
@@ -30,6 +30,15 @@ function addTask(){
     // const tasktext = textinput.value;
     // console.log('hello',tasktext);
 }
+function toggleComplete(event) {
+
+if(event.target.tagName =='BUTTON') {
+
+return;
+}
+console.log('this', this.classList.toggle);
+
+this.classList.toggle('completed')
 function deleteTask(event){
     event.stopPropagation();
     const taskItem = this.parentElement;
